@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+   <body>
+      <h3>NewBook - Flask SQLAlchemy example</h3>
+      <hr/>
+
+      {%- for category, message in get_flashed_messages(with_categories = true) %}
+         <div class = "alert alert-danger">
+            {{ message }}
+         </div>
+      {%- endfor %}
+
+      <form action = "{{ request.path }}" method = "post">
+         <label for = "title">title</label><br>
+         <input type = "text" name = "title" placeholder = "title" /><br>
+         <label for = "isbn">isbn</label><br>
+         <input type = "text" name = "isbn" placeholder = "isbn" /><br>
+         <label for = "year">year</label><br>
+         <textarea name = "year" placeholder = "year"></textarea><br>
+         <label for = "author_id">author_id</label><br>
+         <input type = "text" name = "author_id" placeholder = "author_id" /><br>
+         <label for = "status">status</label><br>
+         <input type = "text" name = "status" placeholder = "status" /><br>
+           <label for = "created">created</label><br>
+         <input type = "text" name = "created" placeholder = "created" /><br>
+         <label for = "updated">updated</label><br>
+         <input type = "text" name = "updated" placeholder = "updated" /><br>
+          <label for = "view">view</label><br>
+         <input type = "text" name = "view" placeholder = "view" /><br>
+           <label for = "vote">vote</label><br>
+         <input type = "text" name = "vote" placeholder = "vote" /><br>
+         <label for = "download">download</label><br>
+         <input type = "text" name = "download" placeholder = "download" /><br>
+         <input type = "submit" value = "Submit" />
+      </form>
+   </body>
+</html>

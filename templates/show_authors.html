@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head></head>
+   <body>
+      <h3>
+         <a href = "{{ url_for('home') }}">Home - Flask
+            SQLAlchemy example</a>
+      </h3>
+
+      <hr/>
+      {%- for message in get_flashed_messages() %}
+         {{ message }}
+      {%- endfor %}
+
+      <h3>Authors (<a href = "{{ url_for('newauthor') }}">Add authors
+         </a>)</h3>
+
+      <table>
+         <thead>
+            <tr>
+               <th>firstName</th>
+               <th>lastName</th>
+               <th>email</th>
+               <th>phone</th>
+                <th>address</th>
+               <th>status</th>
+                <th>created</th>
+               <th>updated</th>
+            </tr>
+         </thead>
+
+         <tbody>
+            {% for author in list_authors %}
+               <tr>
+                  <td>{{ author.firstName }}</td>
+                  <td>{{ author.lastName }}</td>
+                  <td>{{ author.email }}</td>
+                  <td>{{ author.phone }}</td>
+                   <td>{{ author.address }}</td>
+                  <td>{{ author.status }}</td>
+                  <td>{{ author.created }}</td>
+                  <td>{{ author.updated }}</td>
+               </tr>
+            {% endfor %}
+         </tbody>
+      </table>
+   </body>
+</html>
